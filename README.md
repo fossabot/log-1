@@ -1,6 +1,6 @@
 # log
 
-**Note**: The log of level,struct,colorful,and can catch escape output.
+**Note**: The log of level,format(struct),colorful,and can catch escape output.
 
 <!-- TOC -->
 
@@ -11,6 +11,7 @@
     - [Log Install](#log-install)
     - [Get started](#get-started)
     - [Examples](#examples)
+    - [Reference](#reference)
     - [Lisence](#lisence)
 
 <!-- /TOC -->
@@ -26,7 +27,9 @@
 
 ## Format Define
 
-> Recommended: `[%D %T] [%L] (%S) %M`
+```bash
+ Recommended: [%D %T] [%L] (%S) %M
+```
 
 | NO | Format | Details | Output Example|
 | :-: | :-: | :- |  :- |
@@ -169,8 +172,13 @@ func main() {
 
 ## Examples
 
-More examples can be found at [github.com/flyaways/log/examples](https://github.com/flyaways/log/tree/master/examples).
+* More examples can be found at [github.com/flyaways/log/examples](https://github.com/flyaways/log/tree/master/examples).
+
+## Reference
+
+* [log4go](https://github.com/alecthomas/log4go)
+* [logrus](https://github.com/sirupsen/logrus)
 
 ## Lisence
 
-[Apache License 2.0](https://raw.githubusercontent.com/flyaways/log/master/LICENSE)
+* [Apache License 2.0](https://raw.githubusercontent.com/flyaways/log/master/LICENSE)
