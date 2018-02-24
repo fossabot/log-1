@@ -1,6 +1,5 @@
 Golang Log
 =============================
-**Note**: The log of level,format(struct),colorful,and can catch escape output.
 
 <!-- TOC -->
 
