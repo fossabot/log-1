@@ -1,10 +1,10 @@
-# log
+# Golang Log
+=============================
 
 **Note**: The log of level,format(struct),colorful,and can catch escape output.
 
 <!-- TOC -->
 
-- [log](#log)
     - [Function List](#function-list)
     - [Format Define](#format-define)
     - [Level Define](#level-define)
@@ -13,7 +13,7 @@
     - [Examples](#examples)
     - [Reference](#reference)
     - [Lisence](#lisence)
-
+    
 <!-- /TOC -->
 
 ## Function List
