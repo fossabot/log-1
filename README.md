@@ -1,19 +1,18 @@
-# Golang Log
+Golang Log
 =============================
-
 **Note**: The log of level,format(struct),colorful,and can catch escape output.
 
 <!-- TOC -->
 
-    - [Function List](#function-list)
-    - [Format Define](#format-define)
-    - [Level Define](#level-define)
-    - [Log Install](#log-install)
-    - [Get started](#get-started)
-    - [Examples](#examples)
-    - [Reference](#reference)
-    - [Lisence](#lisence)
-    
+- [Function List](#function-list)
+- [Format Define](#format-define)
+- [Level Define](#level-define)
+- [Log Install](#log-install)
+- [Get started](#get-started)
+- [Examples](#examples)
+- [Reference](#reference)
+- [Lisence](#lisence)
+
 <!-- /TOC -->
 
 ## Function List
