@@ -174,8 +174,8 @@ func main() {
 
 ## Reference
 
-* [log4go](https://github.com/alecthomas/log4go)
-* [logrus](https://github.com/sirupsen/logrus)
+* [github.com/alecthomas/log4go](https://github.com/alecthomas/log4go)
+* [github.com/sirupsen/logrus](https://github.com/sirupsen/logrus)
 
 ## Lisence
 
