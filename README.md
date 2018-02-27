@@ -1,6 +1,6 @@
 Golang Log
 =============================
-![timg](./timg.jpeg "timg")
+![record](./record.jpeg "record")
 
 <!-- TOC -->
 
