@@ -1,6 +1,5 @@
 Golang Log
 =============================
-![record](./record.jpeg "record")
 
 <!-- TOC -->
 
