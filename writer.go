@@ -14,15 +14,17 @@ import (
 )
 
 const (
-	Hour           = "H"
-	Minute         = "M"
-	Day            = "D"
-	Midnight       = "MIDNIGHT"
-	AccessFormat   = "[%D %T] [Access] %M"
-	OprationFormat = "[%D %T] [%L] (%S) %M"
-	MessageFormat  = "%M"
-	Location       = "Asia/Chongqing"
+	Hour          = "H"
+	Minute        = "M"
+	Day           = "D"
+	Midnight      = "MIDNIGHT"
+	AccessFormat  = "[%D %T] [Access] %M"
+	OpFormat      = "[%D %T] [%L] (%S) %M"
+	MessageFormat = "%M"
+	Location      = "Asia/Chongqing"
+)
 
+const (
 	DEBUG Level = iota
 	INFO
 	WARN

@@ -35,38 +35,51 @@ go get -u github.com/flyaways/log
 
 ## Get started
 
-> `Access Format`
-
 ```go
 package main
 
 import (
 	"fmt"
 	"os"
+	"os/signal"
 
 	"github.com/flyaways/log"
 )
 
+func init() {
+	//Collector for escape ouput
+	log.Collector()
+}
+
 func main() {
-	access := log.New(
+	op := log.New(
 		log.LogConfig{
 			Level:         log.INFO,
 			FirstRollover: true,
 			Blocking:      false,
 			BufferLength:  10240,
-			PrefixName:    "access.log",
+			PrefixName:    "op.log",
 			When:          log.Hour,
 			BackupCount:   72,
-			Format:        log.AccessFormat},//log.OprationFormat
+			Format:        log.OpFormat}, //log.AccessFormat
 	)
 
-	if access == nil {
+	if op == nil {
 		fmt.Fprintf(os.Stderr, "init logger error\n")
 		return
 	}
 
-	access.Info("access info")
+	op.Debug("Go is an open source project developed by a team at Google and many contributors from the open source community.")
+	op.Info("Go is distributed under a BSD-style license.")
+	op.Warn("A low traffic mailing list for important announcements, such as new releases.")
+	op.Error("We encourage all Go users to subscribe to golang-announce.")
+	//op.Fatal("Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.")
+
+	signals := make(chan os.Signal, 1)
+	signal.Notify(signals, os.Interrupt)
+	<-signals
 }
+
 ```
 
 ## Examples

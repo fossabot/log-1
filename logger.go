@@ -36,7 +36,7 @@ type Logger struct {
 	Writer
 }
 
-func (log Logger) high(lvl Level, arg0 interface{}, args ...interface{}) {
+func (log Logger) low(lvl Level, arg0 interface{}, args ...interface{}) {
 	if lvl < log.Level {
 		return
 	}
@@ -62,6 +62,8 @@ func (log Logger) high(lvl Level, arg0 interface{}, args ...interface{}) {
 		msg = fmt.Sprintf(format, args...)
 	}
 
+	fmt.Println(args, len(args))
+
 	log.Write(&Record{
 		Level:   lvl,
 		Created: time.Now(),
@@ -75,23 +77,23 @@ func (log Logger) high(lvl Level, arg0 interface{}, args ...interface{}) {
 }
 
 func (log Logger) Debug(arg0 interface{}, args ...interface{}) {
-	log.high(DEBUG, arg0, args)
+	log.low(DEBUG, arg0, args...)
 }
 
 func (log Logger) Info(arg0 interface{}, args ...interface{}) {
-	log.high(INFO, arg0, args)
+	log.low(INFO, arg0, args...)
 }
 
 func (log Logger) Warn(arg0 interface{}, args ...interface{}) {
-	log.high(WARN, arg0, args)
+	log.low(WARN, arg0, args...)
 }
 
 func (log Logger) Error(arg0 interface{}, args ...interface{}) {
-	log.high(ERROR, arg0, args)
+	log.low(ERROR, arg0, args...)
 }
 
 func (log Logger) Fatal(arg0 interface{}, args ...interface{}) {
-	log.high(FATAL, arg0, args)
+	log.low(FATAL, arg0, args...)
 }
 
 func midnight(now time.Time) int64 {
@@ -102,18 +104,18 @@ func midnight(now time.Time) int64 {
 
 // Collector for redirect escape log.
 func Collector() {
-	Panic()
-	Std()
+	escapePanic()
+	escapeStd()
 }
 
-func Std() {
+func escapeStd() {
 	fd, _ := os.OpenFile("std.log", os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0644)
 	os.Stdout = fd
 	os.Stderr = fd
 	log.SetOutput(fd)
 }
 
-func Panic() {
+func escapePanic() {
 	fd, err := os.OpenFile("panic.log", os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0644)
 	if err != nil {
 		panic(err)
