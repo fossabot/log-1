@@ -1,16 +1,7 @@
 Golang Log
 =============================
 
-## Function List
-
-| NO | Function | Details | Remarks|
-| :-: | :- | :- |  :- |
-| 1 | format| format just like fmt | contain date,time and source(file,lineno,funcname) |
-| 2 | color | level color | different level have different keyword of level color|
-| 3 | redirect | redirect escape log | panic to panic.log, redirect stdout and stderr to std.log|
-| 4 | log level | diffrent case use diffrent level | DEBUG,INFO,WARNING,ERROR|
-
-## Format Define
+format,colorful,level log and redirect escape log.
 
 ```bash
  Recommended: [%D %T] [%L] (%S) %M
@@ -66,7 +57,7 @@ func main() {
 			PrefixName:    "access.log",
 			When:          log.Hour,
 			BackupCount:   72,
-			Format:        log.AccessFormat},
+			Format:        log.AccessFormat},//log.OprationFormat
 	)
 
 	if access == nil {
@@ -75,48 +66,6 @@ func main() {
 	}
 
 	access.Info("access info")
-}
-```
-
->`Opration Format`
-
-```go
-package main
-
-import (
-	"fmt"
-	"os"
-
-	"github.com/flyaways/log"
-)
-
-func init() {
-	log.Collector()
-}
-
-func main() {
-	operation := log.New(
-		log.LogConfig{
-			Level:         log.INFO,
-			FirstRollover: true,
-			Blocking:      false,
-			BufferLength:  10240,
-			PrefixName:    "operation.log",
-			When:          log.Hour,
-			BackupCount:   72,
-			Format:        log.OprationFormat},
-	)
-
-	if operation == nil {
-		fmt.Fprintf(os.Stderr, "init logger error\n")
-		return
-	}
-
-	operation.Debug("Debug")
-	operation.Info("Info")
-	operation.Warn("Warn")
-	operation.Error("Error")
-	operation.Fatal("Fatal")
 }
 ```
 
