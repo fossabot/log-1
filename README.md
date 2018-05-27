@@ -34,7 +34,7 @@ Golang Log
 | 2 |INFO    | for general output  |
 | 3 |WARN    | for warnning output |
 | 4 |ERROR   | for error output    |
-| 5 |FATAL   | for error output    |
+| 5 |FATAL   | for fatal output    |
 
 ## Log Install
 
