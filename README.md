@@ -3,6 +3,8 @@ Golang Log
 
 format,colorful,level log and redirect escape log.
 
+[![asciinema](https://asciinema.org/a/NYcaJUSKPOH6xzwLCTG5NBtX2.png)](https://asciinema.org/a/NYcaJUSKPOH6xzwLCTG5NBtX2?autoplay=1)
+
 ```bash
  Recommended: [%D %T] [%L] (%S) %M
 ```
@@ -81,8 +83,6 @@ func main() {
 }
 
 ```
-
-## Examples
 
 * More examples can be found at [github.com/flyaways/log/_examples](https://github.com/flyaways/log/tree/master/_examples).
 
