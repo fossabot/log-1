@@ -62,8 +62,6 @@ func (log Logger) low(lvl Level, arg0 interface{}, args ...interface{}) {
 		msg = fmt.Sprintf(format, args...)
 	}
 
-	fmt.Println(args, len(args))
-
 	log.Write(&Record{
 		Level:   lvl,
 		Created: time.Now(),
