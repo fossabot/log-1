@@ -3,14 +3,15 @@ Golang Log
 
 <!-- TOC -->
 
-- [Function List](#function-list)
-- [Format Define](#format-define)
-- [Level Define](#level-define)
-- [Log Install](#log-install)
-- [Get started](#get-started)
-- [Examples](#examples)
-- [Reference](#reference)
-- [Lisence](#lisence)
+- [Golang Log](#golang-log)
+	- [Function List](#function-list)
+	- [Format Define](#format-define)
+	- [Level Define](#level-define)
+	- [Log Install](#log-install)
+	- [Get started](#get-started)
+	- [Examples](#examples)
+	- [Reference](#reference)
+	- [Lisence](#lisence)
 
 <!-- /TOC -->
 
@@ -170,7 +171,7 @@ func main() {
 
 ## Examples
 
-* More examples can be found at [github.com/flyaways/log/examples](https://github.com/flyaways/log/tree/master/examples).
+* More examples can be found at [github.com/flyaways/log/_examples](https://github.com/flyaways/log/tree/master/examples).
 
 ## Reference
 
