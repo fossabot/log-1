@@ -14,17 +14,18 @@ const (
 
 	DEBUG Level = iota
 	INFO
-	WARNING
+	WARN
 	ERROR
+	FATAL
 )
+
+type Level int
 
 var (
 	RotationError = errors.New("rotation error")
 	LogWriteError = errors.New("logwrite error")
 	ReadDirError  = errors.New("readdir error")
-)
 
-var (
 	conversion = map[string]string{
 		/*stdLongMonth      */ "B": "January",
 		/*stdMonth          */ "b": "Jan",
@@ -55,4 +56,18 @@ var (
 	}
 
 	fCache = &formatCache{}
+
+	levelStrings = [...]string{
+		"\x1b[36mDEBG\x1b[0m",
+		"\x1b[34mINFO\x1b[0m",
+		"\x1b[33mWARN\x1b[0m",
+		"\x1b[31mEROR\x1b[0m",
+		"\x1b[35mFATAL\x1b[0m"}
 )
+
+func (l Level) String() string {
+	if l < 0 || int(l) > len(levelStrings) {
+		return "\x1b[37mUNKN\x1b[0m"
+	}
+	return levelStrings[int(l)]
+}

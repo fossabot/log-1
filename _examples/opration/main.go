@@ -34,4 +34,5 @@ func main() {
 	operation.Info("Info")
 	operation.Warn("Warn")
 	operation.Error("Error")
+	operation.Fatal("Fatal")
 }

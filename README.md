@@ -32,8 +32,9 @@ Golang Log
 | :-: | :-: | :- |
 | 1 |DEBUG   | for debug output    |
 | 2 |INFO    | for general output  |
-| 3 |WARNING | for warnning output |
+| 3 |WARN    | for warnning output |
 | 4 |ERROR   | for error output    |
+| 5 |FATAL   | for error output    |
 
 ## Log Install
 
@@ -43,7 +44,7 @@ go get -u github.com/flyaways/log
 
 ## Get started
 
-> Create `access` log
+> `Access Format`
 
 ```go
 package main
@@ -77,7 +78,7 @@ func main() {
 }
 ```
 
-> Create `business` log
+>`Opration Format`
 
 ```go
 package main
@@ -115,49 +116,13 @@ func main() {
 	operation.Info("Info")
 	operation.Warn("Warn")
 	operation.Error("Error")
-}
-```
-
-> Create `messageonly` log
-
-```go
-package main
-
-import (
-	"fmt"
-	"os"
-
-	"github.com/flyaways/log"
-)
-
-func main() {
-	messageonly := log.New(
-		log.LogConfig{
-			Level:         log.INFO,
-			FirstRollover: true,
-			Blocking:      false,
-			BufferLength:  10240,
-			PrefixName:    "messageonly.log",
-			When:          log.Hour,
-			BackupCount:   72,
-			Format:        log.MessageOnly},
-	)
-
-	if messageonly == nil {
-		fmt.Fprintf(os.Stderr, "init logger error\n")
-		return
-	}
-
-	messageonly.Debug("Debug")
-	messageonly.Info("Info")
-	messageonly.Warn("Warn")
-	messageonly.Error("Warn")
+	operation.Fatal("Fatal")
 }
 ```
 
 ## Examples
 
-* More examples can be found at [github.com/flyaways/log/_examples](https://github.com/flyaways/log/tree/master/examples).
+* More examples can be found at [github.com/flyaways/log/_examples](https://github.com/flyaways/log/tree/master/_examples).
 
 ## Reference
 

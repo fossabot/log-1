@@ -8,21 +8,6 @@ import (
 	"time"
 )
 
-type Level int
-
-var levelStrings = [...]string{
-	"\x1b[36mDEBG\x1b[0m",
-	"\x1b[34mINFO\x1b[0m",
-	"\x1b[33mWARN\x1b[0m",
-	"\x1b[31mEROR\x1b[0m"}
-
-func (l Level) String() string {
-	if l < 0 || int(l) > len(levelStrings) {
-		return "\x1b[37mUNKN\x1b[0m"
-	}
-	return levelStrings[int(l)]
-}
-
 type Logger struct {
 	Level
 	Writer
@@ -60,6 +45,10 @@ func (log Logger) high(lvl Level, arg0 interface{}, args ...interface{}) {
 		Source:  src,
 		Message: msg,
 	})
+
+	if lvl == FATAL {
+		panic(msg)
+	}
 }
 
 func (log Logger) Debug(arg0 interface{}, args ...interface{}) {
@@ -71,9 +60,13 @@ func (log Logger) Info(arg0 interface{}, args ...interface{}) {
 }
 
 func (log Logger) Warn(arg0 interface{}, args ...interface{}) {
-	log.high(WARNING, arg0, args)
+	log.high(WARN, arg0, args)
 }
 
 func (log Logger) Error(arg0 interface{}, args ...interface{}) {
 	log.high(ERROR, arg0, args)
+}
+
+func (log Logger) Fatal(arg0 interface{}, args ...interface{}) {
+	log.high(FATAL, arg0, args)
 }
