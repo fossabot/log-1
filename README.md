@@ -1,20 +1,6 @@
 Golang Log
 =============================
 
-<!-- TOC -->
-
-- [Golang Log](#golang-log)
-	- [Function List](#function-list)
-	- [Format Define](#format-define)
-	- [Level Define](#level-define)
-	- [Log Install](#log-install)
-	- [Get started](#get-started)
-	- [Examples](#examples)
-	- [Reference](#reference)
-	- [Lisence](#lisence)
-
-<!-- /TOC -->
-
 ## Function List
 
 | NO | Function | Details | Remarks|
