@@ -4,6 +4,7 @@ Golang Log
 format,colorful,level log and redirect escape log.
 
 [![asciinema](https://asciinema.org/a/NYcaJUSKPOH6xzwLCTG5NBtX2.png)](https://asciinema.org/a/NYcaJUSKPOH6xzwLCTG5NBtX2?autoplay=1)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fflyaways%2Flog.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fflyaways%2Flog?ref=badge_shield)
 
 ```bash
  Recommended: [%D %T] [%L] (%S) %M
@@ -94,3 +95,7 @@ func main() {
 ## Lisence
 
 * [Apache License 2.0](https://raw.githubusercontent.com/flyaways/log/master/LICENSE)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fflyaways%2Flog.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fflyaways%2Flog?ref=badge_large)
